@@ -1,0 +1,33 @@
+name: Format check
+
+on:
+  push:
+    branches:
+      - 'master'
+    tags: '*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: julia-actions/setup-julia@latest
+        with:
+          version: '1.10'
+
+      - uses: actions/checkout@v4
+      - name: Install JuliaFormatter and format
+        run: |
+          julia --color=yes -e 'using Pkg; Pkg.add(PackageSpec(name="JuliaFormatter", version="1.0.49"))'
+          julia --color=yes -e 'using JuliaFormatter; format(".", verbose=true)'
+      - name: Format Check
+        run: |
+          julia -e '
+          out = Cmd(`git diff --name-only`) |> read |> String
+          if out == ""
+              exit(0)
+          else
+              @error "Some files have not been formatted !!!"
+              write(stdout, out)
+              exit(1)
+          end'
