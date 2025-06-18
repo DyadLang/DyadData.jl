@@ -1,0 +1,2 @@
+type DyadDataset = Native
+type DyadDatapoint = Native
