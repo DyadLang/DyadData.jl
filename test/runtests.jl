@@ -69,4 +69,16 @@ using DataFrames
         @test length(df.a) == 1
         @test eltype(df."a") == Float64
     end
+
+    @testset "Dyad URIs" begin
+        @test DyadData.resolve_dyad_uri("dyad://DyadData/test/lotka.csv") ==
+              joinpath(@__DIR__, "lotka.csv")
+
+        kwargs = (; independent_var = "timestamp", dependent_vars = ["y(t)", "x(t)"])
+        @test DyadData.build_dataframe(
+            DyadData.DyadDataset("dyad://DyadData/test/lotka.csv"; kwargs...),
+        ) == DyadData.build_dataframe(
+            DyadData.DyadDataset(joinpath(@__DIR__, "lotka.csv"); kwargs...),
+        )
+    end
 end

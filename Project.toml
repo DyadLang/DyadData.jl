@@ -1,7 +1,7 @@
 name = "DyadData"
 uuid = "cab12561-e36c-4498-ae70-c9a5e79fef2a"
 authors = ["JuliaHub"]
-version = "1.1.0"
+version = "1.2.0"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
@@ -9,10 +9,10 @@ DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 JuliaHub = "bc7fa6ce-b75e-4d60-89ad-56c957190b6e"
 
 [compat]
-Aqua = "0.8.9"
-CSV = "0.10.15"
+Aqua = "0.8"
+CSV = "0.10"
 JET = "0.9"
-DataFrames = "1.7.0"
+DataFrames = "1.7"
 JuliaHub = "0.1.13"
 Test = "1"
 julia = "1.10"
