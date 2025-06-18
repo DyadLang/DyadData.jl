@@ -1,7 +1,7 @@
 name = "DyadData"
 uuid = "cab12561-e36c-4498-ae70-c9a5e79fef2a"
 authors = ["JuliaHub"]
-version = "1.2.1"
+version = "1.2.2"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
