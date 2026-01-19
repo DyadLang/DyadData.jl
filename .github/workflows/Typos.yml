@@ -9,4 +9,4 @@ jobs:
       - name: Checkout Actions Repository
         uses: actions/checkout@v4
       - name: Check spelling
-        uses: crate-ci/typos@b1ae8d918b6e85bd611117d3d9a3be4f903ee5e4 # v1.33.1
+        uses: crate-ci/typos@65120634e79d8374d1aa2f27e54baa0c364fff5a # v1.42.1
